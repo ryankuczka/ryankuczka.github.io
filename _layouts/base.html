@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <script src="/static/vendors/js/jquery-1.10.2.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/static/css/core.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="/static/vendors/css/font-awesome.css" />
+        {% for stylesheet in page.stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ stylesheet }}" />
+        {% endfor %}
+
+    </head>
+    <body>
+        <div id="wrapAll">
+            <div id="header">
+                <div class="logo">
+                    <a href="/"><img src="/static/img/header-logo.png" width="483" height="95" /></a>
+                </div>
+                <div class="headerContent">
+                    <div class="networks">&nbsp;</div>
+                    <div class="navButtons">
+                        <a href="/contact/" class="navButton{% if page.site_section == 'contact' %} selected{% endif %}">Contact</a>
+                        <a href="/projects/" class="navButton{% if page.site_section == 'projects' %} selected{% endif %}">Projects</a>
+                        <a href="/blog/" class="navButton{% if page.site_section == 'blog' %} selected{% endif %}">Blog</a>
+                        <a href="/about/about_me.html" class="navButton{% if page.site_section == 'about' %} selected{% endif %}">About</a>
+                    </div>
+                </div>
+                <div class="dividerLine"></div>
+            </div>
+
+            <div id="contentWrap">
+                {{ content }}
+                <div id="push"></div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p class="footer">Ryan Kuczka &copy; 2013</p>
+        </div>
+    </body>
+</html>

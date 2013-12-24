@@ -1,0 +1,34 @@
+---
+layout: base
+title: Ryan Kuczka
+stylesheets: [/static/css/blog.css, /static/css/projects.css]
+---
+<div class="homePgWell">
+    <div class="homePgTtl">
+        <h1>Recent Blog Posts</h1>
+    </div>
+    <div class="inner">
+        {% for post in site.posts %}
+        {% unless forloop.counter > 3 %}
+        <a href="{{ post.url }}" class="entryTitle"><h2>{{ post.title }}</h2></a>
+        <h5>By: Ryan Kuczka<span class="pubDate">{{ post.date | date:"%b %d, %Y" }}</span></h5>
+        {% if post.content contains '<!--more-->' %}
+        {{ post.content | split:'<!--more-->' | first }}
+        {% else %}
+        {{ post.excerpt }}
+        {% endif %}
+        {% endunless %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="homePgWell">
+    <div class="homePgTtl">
+        <h1>Recent Projects</h1>
+    </div>
+    <div class="inner">
+        <a href="/projects/django_site" class="projName">
+            <h2>Django Site<span class="projUpdate">Last Updated: Dec 23, 2013</span></h2>
+        </a>
+    </div>
+</div>

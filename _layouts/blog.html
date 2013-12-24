@@ -1,0 +1,129 @@
+---
+layout: base
+site_section: blog
+stylesheets: [/static/css/blog.css]
+---
+<div id="leftCol">
+    <div id="blogNav">
+        <a href="/blog/" class="blogNavTab entries{% if page.blog_section == 'entries' %} selected{% endif %}">Entries</a>
+        <div class="blogNavList">
+            {% for post in site.posts %}
+            {% capture this_year %}{{ post.date | date:"%Y" }}{% endcapture %}
+            {% capture next_year %}{{ post.previous.date | date:"%Y" }}{% endcapture %}
+            {% capture this_month %}{{ post.date | date:"%m" }}{% endcapture %}
+            {% capture next_month %}{{ post.previous.date | date:"%m" }}{% endcapture %}
+            {% capture this_month_long %}{{ post.date | date:"%B" }}{% endcapture %}
+            {% capture next_month_long %}{{ post.previous.date | date:"%B" }}{% endcapture %}
+
+            {% if forloop.first %}
+            <div class="blogNavYear">
+                <a href="#" data-target="#months{{ this_year }}" class="collapsible collapsed">
+                    {{ this_year }}&nbsp;&nbsp;<i class="fa fa-chevron-left"></i>
+                </a>
+                <div id="months{{ this_year }}" class="blogNavMonth collapsed">
+                    <a href="#" data-target="#entries{{ this_month }}{{ this_year }}" class="collapsible collapsed">
+                        {{ this_month_long }}&nbsp;&nbsp;<i class="fa fa-chevron-left"></i>
+                    </a>
+                    <div id="entries{{ this_month }}{{ this_year }}" class="blogNavEntries collapsed">
+            {% endif %}
+
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+
+            {% if forloop.last %}
+                    </div>
+                </div>
+            </div>
+            {% elsif this_year != next_year %}
+                    </div>
+                </div>
+                <a href="#" data-target="#months{{ next_year }}" class="collapsible collapsed">
+                    {{ next_year }}&nbsp;&nbsp;<i class="fa fa-chevron-left"></i>
+                </a>
+                <div id="months{{ next_year }}" class="blogNavMonth collapsed">
+                    <a href="#" data-target="#entries{{ next_month }}{{ next_year }}" class="collapsible collapsed">
+                        {{ next_month_long }}&nbsp;&nbsp;<i class="fa fa-chevron-left"></i>
+                    </a>
+                    <div id="entries{{ next_month }}{{ next_year }}" class="blogNavEntries collapsed">
+            {% elsif this_month != next_month %}
+                    </div>
+                    <a href="#" data-target="#entries{{ next_month }}{{ this_year }}" class="collapsible collapsed">
+                        {{ next_month_long }}&nbsp;&nbsp;<i class="fa fa-chevron-left"></i>
+                    </a>
+                    <div id="entries{{ next_month }}{{ next_year }}" class="blogNavEntries collapsed">
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="blogNavTab tags{% if page.blog_section == 'tags' %} selected{% endif %}">
+            Tags
+        </div>
+        <div class="blogTagCloud">
+            <p class="tagCloud">
+                {% for tag in site.tags %}
+                <a href="/blog/tag/{{ tag | first }}">{{ tag | first }}</a>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+            </p>
+        </div>
+
+        <a href="/blog/archives" class="blogNavTab archives{% if page.blog_section == 'archives' %} selected{% endif %}">Archives</a>
+    </div>
+</div>
+
+<div id="mainCol">
+    {{ content }}
+    <script src="/static/vendors/js/jquery.sticky.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#blogNav').sticky({topSpacing: 20});
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('a.collapsible').click(function(event) {
+                event.preventDefault();
+                var $target = $($(this).data('target'));
+                if ($target.hasClass('collapsed')) {
+                    $target.slideDown();
+                    $target.toggleClass('collapsed');
+                } else {
+                    $target.slideUp(function() {
+                        $target.toggleClass('collapsed');
+                    });
+                }
+                $('i.fa-chevron-left', this).toggleClass('fa-rotate-270');
+                $('i.fa-plus', this).toggleClass('fa-minus');
+                $(this).toggleClass('collapsed');
+            });
+            $('.blogNavTab.entries,.blogNavList').hover(function() {
+                if ($('.blogNavTab.entries').hasClass('selected')) {
+                    $('.blogNavTab.entries').css('box-shadow', '-3px 3px 0 #cca000');
+                } else {
+                    $('.blogNavTab.entries').css('box-shadow', '-3px 3px 0 #555');
+                }
+                $('.blogNavList').css('box-shadow', '-3px 3px 0 #555');
+            }, function() {
+                if ($('.blogNavTab.entries').hasClass('selected')) {
+                    $('.blogNavTab.entries').css('box-shadow', '-5px 5px 0 #cca000');
+                } else {
+                    $('.blogNavTab.entries').css('box-shadow', '-5px 5px 0 #555');
+                }
+                $('.blogNavList').css('box-shadow', '-5px 5px 0 #555');
+            });
+            $('.blogNavTab.tags,.blogTagCloud').hover(function() {
+                if ($('.blogNavTab.tags').hasClass('selected')) {
+                    $('.blogNavTab.tags').css('box-shadow', '-3px 3px 0 #cca000');
+                } else {
+                    $('.blogNavTab.tags').css('box-shadow', '-3px 3px 0 #555');
+                }
+                $('.blogTagCloud').css('box-shadow', '-3px 3px 0 #555');
+            }, function() {
+                if ($('.blogNavTab.tags').hasClass('selected')) {
+                    $('.blogNavTab.tags').css('box-shadow', '-5px 5px 0 #cca000');
+                } else {
+                    $('.blogNavTab.tags').css('box-shadow', '-5px 5px 0 #555');
+                }
+                $('.blogTagCloud').css('box-shadow', '-5px 5px 0 #555');
+            });
+        });
+    </script>
+</div>

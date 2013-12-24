@@ -1,0 +1,15 @@
+---
+layout: blog
+blog_section: entries
+---
+<h1 class="entryTitle">{{ page.title }}</h1>
+<h5>By: Ryan Kuczka<span class="pubDate">{{ page.date | date:"%b %d, %Y" }}</span></h5>
+<div class="entryContent">
+    {{ content }}
+</div>
+{% capture num_tags %}{{ page.tags | size }}{% endcapture %}
+{% if num_tags != 0 %}
+<div class="entryTags">
+    <p>Tags: {% for tag in page.tags %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+</div>
+{% endif %}

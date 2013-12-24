@@ -1,0 +1,14 @@
+---
+layout: blog
+blog_section: entries
+title: Blog
+---
+{% for post in site.posts %}
+<a href="{{ post.url }}" class="entryTitle"><h1>{{ post.title }}</h1></a>
+<h5>By: Ryan Kuczka<span class="pubDate">{{ post.date | date:"%b %d, %Y" }}</span></h5>
+{% if post.content contains '<!--more-->' %}
+{{ post.content | split:'<!--more-->' | first }}
+{% else %}
+{{ post.excerpt }}
+{% endif %}
+{% endfor %}

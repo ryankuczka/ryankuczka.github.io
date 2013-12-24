@@ -1,0 +1,23 @@
+---
+layout: base
+site_section: about
+stylesheets: [/static/css/about.css]
+---
+<div id="leftCol">
+    <div id="aboutnav">
+        <a href="/about/about_me.html" class="aboutNavTab{% if page.about_section == 'about_me' %} selected{% endif %}">About Me</a>
+        <a href="/about/education.html" class="aboutNavTab{% if page.about_section == 'education' %} selected{% endif %}">Education</a>
+        <a href="/about/experience.html" class="aboutNavTab{% if page.about_section == 'experience' %} selected{% endif %}">Experience</a>
+        <a href="/about/interests.html" class="aboutNavTab{% if page.about_section == 'interests' %} selected{% endif %}">Interests</a>
+    </div>
+</div>
+
+<div id="mainCol">
+    {{ content }}
+    <script src="/static/vendors/js/jquery.sticky.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#aboutNav').sticky({topSpacing: 20});
+        });
+    </script>
+</div>
