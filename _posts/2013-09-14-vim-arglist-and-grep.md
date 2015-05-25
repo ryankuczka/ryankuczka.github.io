@@ -1,6 +1,5 @@
 ---
 layout: post
-tags: vim grep
 title: Vim Arglist and Grep
 ---
 So today, I needed to perform a basic find and replace across many

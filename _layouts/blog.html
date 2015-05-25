@@ -54,17 +54,6 @@ stylesheets: [/static/css/blog.css]
             {% endfor %}
         </div>
 
-        <div class="blogNavTab tags{% if page.blog_section == 'tags' %} selected{% endif %}">
-            Tags
-        </div>
-        <div class="blogTagCloud">
-            <p class="tagCloud">
-                {% for tag in site.tags %}
-                <a href="/blog/tag/{{ tag | first }}">{{ tag | first }}</a>{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-            </p>
-        </div>
-
         <a href="/blog/archives" class="blogNavTab archives{% if page.blog_section == 'archives' %} selected{% endif %}">Archives</a>
     </div>
 </div>
@@ -108,21 +97,6 @@ stylesheets: [/static/css/blog.css]
                     $('.blogNavTab.entries').css('box-shadow', '-5px 5px 0 #555');
                 }
                 $('.blogNavList').css('box-shadow', '-5px 5px 0 #555');
-            });
-            $('.blogNavTab.tags,.blogTagCloud').hover(function() {
-                if ($('.blogNavTab.tags').hasClass('selected')) {
-                    $('.blogNavTab.tags').css('box-shadow', '-3px 3px 0 #cca000');
-                } else {
-                    $('.blogNavTab.tags').css('box-shadow', '-3px 3px 0 #555');
-                }
-                $('.blogTagCloud').css('box-shadow', '-3px 3px 0 #555');
-            }, function() {
-                if ($('.blogNavTab.tags').hasClass('selected')) {
-                    $('.blogNavTab.tags').css('box-shadow', '-5px 5px 0 #cca000');
-                } else {
-                    $('.blogNavTab.tags').css('box-shadow', '-5px 5px 0 #555');
-                }
-                $('.blogTagCloud').css('box-shadow', '-5px 5px 0 #555');
             });
         });
     </script>

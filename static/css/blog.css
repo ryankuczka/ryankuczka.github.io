@@ -21,13 +21,13 @@ span.pubDate {float: right;}
     box-shadow: -5px 5px 0 #555;
 }
 .blogNavTab.entries {margin-top: 5px;}
-.blogNavTab.entries, .blogNavTab.tags {border-bottom: 2px solid #000;}
+.blogNavTab.entries {border-bottom: 2px solid #000;}
 .blogNavTab.archives {border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;}
 .blogNavTab.archives:hover {box-shadow: -3px 3px 0 #555;}
 .blogNavTab.archives.selected:hover {box-shadow: -3px 3px 0 #cca000;}
 .blogNavTab.selected {background: #ffd200; box-shadow: -5px 5px 0 #cca000;}
-.blogNavTab.entries.selected, .blogNavTab.tags.selected {border-bottom: none;}
-.blogNavList, .blogTagCloud {
+.blogNavTab.entries.selected {border-bottom: none;}
+.blogNavList {
     padding-bottom: 5px;
     background: #999;
     border-bottom-left-radius: 5px;
@@ -62,7 +62,6 @@ span.pubDate {float: right;}
 .blogNavEntries > a:hover {text-decoration: none;}
 .blogNavEntries > a:last-child {padding-bottom: 5px;}
 
-.tagCloud {margin: 0 5px; color: #000;}
 div.collapsed {display: none;}
 
 /* Archives */
