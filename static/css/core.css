@@ -19,11 +19,10 @@ p {line-height: 1.2em;}
 strong {color: #555;}
 
 #wrapAll {
-    width: 950px;
+    max-width: 1560px;
+    min-width: 950px;
     margin: 0 auto -30px;
     background: #fff;
-    border-left: 5px solid #ffd200;
-    border-right: 5px solid #ffd200;
     box-shadow: 0 0 15px #333;
     min-height: 100%;
     height: auto !important;
@@ -52,31 +51,36 @@ strong {color: #555;}
 
 /* Header */
 #header {
-    height: 100px;
-    padding: 20px 25px;
-    width: 900px;
+    height: 50px;
+    width: 100%;
+    background-color: #000;
 }
-#header div.logo {height: 95px; width: 483px; float: left;}
-#header div.headerContent {height: 95px; width: 417px; float: right;}
-#header div.networks {height: 60px;}
-#header div.dividerLine {height: 5px; width: 900px; background: #ffd200; clear: both;}
+#header div.logo {
+    margin-left: 25px;
+    float: left;
+    color: #ffd200;
+    font-size: 1.5em;
+}
+#header div.logo a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 44px;
+    text-decoration: none;
+}
+#header div.navButtons {margin-right: 25px; float: right;}
 #header a.navButton {
     display: block;
     height: 30px;
-    padding: 5px 8px 0 8px;
-    margin-right: 5px;
+    padding: 18px 8px 0 8px;
     float: right;
-    background: #999;
-    font-weight: bold;
     font-size: 1.5em;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    border-left: 1px solid #fff;
 }
-#header a.navButton.selected {background: #ffd200;}
-#header a.navButton.selected:hover {background: #ffd200;}
-#header a.navButton:hover {background: #ccc;}
+#header a.navButton:last-child {border-left: none;}
+#header a.navButton.selected {color: #ffd200;}
+#header a.navButton:hover {color: #ffd200;}
 
 /* footer */
 #push {height: 30px; clear: both;}
