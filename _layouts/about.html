@@ -1,23 +1,15 @@
 ---
 layout: base
 site_section: about
-stylesheets: [/static/css/about.css]
 ---
-<div id="leftCol">
-    <div id="aboutNav">
-        <a href="/about/about_me.html" class="aboutNavTab{% if page.about_section == 'about_me' %} selected{% endif %}">About Me</a>
-        <a href="/about/education.html" class="aboutNavTab{% if page.about_section == 'education' %} selected{% endif %}">Education</a>
-        <a href="/about/experience.html" class="aboutNavTab{% if page.about_section == 'experience' %} selected{% endif %}">Experience</a>
-        <a href="/about/interests.html" class="aboutNavTab{% if page.about_section == 'interests' %} selected{% endif %}">Interests</a>
-    </div>
+<div id="subHead">
+    <a href="/about/interests.html"{% if page.about_section == 'interests' %} class="selected"{% endif %}>Interests</a>
+    <a href="/about/experience.html"{% if page.about_section == 'experience' %} class="selected"{% endif %}>Experience</a>
+    <a href="/about/education.html"{% if page.about_section == 'education' %} class="selected"{% endif %}>Education</a>
+    <a href="/about/about_me.html"{% if page.about_section == 'about_me' %} class="selected"{% endif %}>About Me</a>
 </div>
 
-<div id="mainCol">
+<div id="contentWrap">
     {{ content }}
-    <script src="/static/vendors/js/jquery.sticky.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#aboutNav').sticky({topSpacing: 20});
-        });
-    </script>
+    <div id="push"></div>
 </div>

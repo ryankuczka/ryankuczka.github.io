@@ -3,63 +3,46 @@ html {height: 100%; overflow-y: scroll;}
 body {
     font-size: 16px;
     font-family: Arial;
-    color: #777;
-    background: #ddd;
+    color: #000;
+    background: #000;
     margin: 0;
     height: 100%;
 }
 h1,h2,h3,h4,h5,h6 {color: #000;}
-a {text-decoration: underline; color: #000;}
-a:hover {text-decoration: none;}
+a {text-decoration: none; color: #ffd200;}
+a:hover {text-decoration: underline;}
 .clear {clear: both;}
 code {background: #ccc; color: #000;}
 p > code {border: 1px solid #777; padding: 0 5px; border-radius: 2px;}
 pre {padding: 5px; background: #ccc; color: #000; border: 1px solid #777; border-radius: 2px;}
 p {line-height: 1.2em;}
-strong {color: #555;}
 
 #wrapAll {
     max-width: 1560px;
-    min-width: 950px;
+    min-width: 1000px;
     margin: 0 auto -30px;
-    background: #fff;
+    background: #777;
     box-shadow: 0 0 15px #333;
     min-height: 100%;
     height: auto !important;
     height: 100%;
 }
-#leftCol {width: 150px; float: left;}
-#mainCol {width: 730px; float: left; margin-left: 20px;}
-#contentWrap {width: 900px; padding: 0 25px;}
-
-.homePgWell {
-    /*box-shadow: 0 0 15px #999;*/
-    border: 1px solid #999;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-.homePgWell .inner {padding: 0 20px 20px;}
-.homePgTtl {
-    background: #999;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    border-bottom: 1px solid black;
-    padding-top: 5px;
-    margin-bottom: 5px;
-}
-.homePgTtl h1 {margin: 0 20px 5px;}
+#colRail {float: left; display: inline; width: 25%; box-sizing: border-box; padding: 0 0 0 20px;}
+#colMain {float: left; display: inline; width: 75%; box-sizing: border-box;}
+#contentWrap {padding: 10px 25px 0 25px; width: 1000px; margin: 0 auto; clear: both;}
 
 /* Header */
 #header {
     height: 50px;
     width: 100%;
     background-color: #000;
+    border-bottom: 1px solid #ffd200;
 }
 #header div.logo {
     margin-left: 25px;
     float: left;
     color: #ffd200;
-    font-size: 1.5em;
+    font-size: 24px;
 }
 #header div.logo a {
     color: #fff;
@@ -71,26 +54,101 @@ strong {color: #555;}
 #header a.navButton {
     display: block;
     height: 30px;
-    padding: 18px 8px 0 8px;
+    padding: 20px 8px 0 8px;
     float: right;
-    font-size: 1.5em;
+    font-size: 24px;
     text-decoration: none;
     color: #fff;
-    border-left: 1px solid #fff;
+    border-left: 1px solid #ffd200;
 }
 #header a.navButton:last-child {border-left: none;}
 #header a.navButton.selected {color: #ffd200;}
 #header a.navButton:hover {color: #ffd200;}
 
-/* footer */
+/* Sub-Header */
+#subHead {
+    background-color: #000;
+    float: right;
+    width: 100%;
+    height: 25px;
+    padding-right: 25px;
+    border-bottom: 1px solid #ffd200;
+}
+
+#subHead a {
+    display: inline-block;
+    height: 20px;
+    text-decoration: none;
+    color: #fff;
+    float: right;
+    padding: 5px 8px 0 8px;
+}
+#subHead a:last-child {border-left: none;}
+#subHead a:hover {color: #ffd200;}
+#subHead a.selected {color: #ffd200;}
+
+/* Home Page */
+div.homePgTitle {
+    display: block;
+    font-size: 48px;
+    background-color: #000;
+    width: 995px;
+    color: #ffd200;
+    padding: 0 0 0 5px;
+    margin: 0 0 10px 0;
+}
+
+/* Blog */
+a.entryTitle,
+div.entryTitle {
+    display: block;
+    font-size: 32px;
+    background-color: #000;
+    width: 995px;
+    color: #fff;
+    padding: 0 0 0 5px;
+}
+a.entryTitle:hover {text-decoration: none; color: #ffd200;}
+a.entryTitle span.pubDate,
+div.entryTitle span.pubDate {font-size: 16px; color: #ffd200;}
+
+div.entryContent {
+    overflow: auto;
+    background-color: #999;
+    padding: 0 10px;
+    border: 1px solid #000;
+    border-top: none;
+    margin-bottom: 10px;
+}
+div.entryContent h3 {margin: 10px 0;}
+div.entryContent span.pubDate {float: right;}
+
+div.contactInfo {overflow: auto; padding-bottom: 10px;}
+div.contactInfo:first-child {padding-top: 10px;}
+div.contactInfo a {
+    display: block;
+    font-size: 24px;
+    background-color: #000;
+    width: 309px;
+    color: #fff;
+    margin-left: 10px;
+    padding: 5px;
+    float: left;
+    text-align: center;
+}
+div.contactInfo a:first-child {margin-left: 0;}
+div.contactInfo a:hover {text-decoration: none; color: #ffd200;}
+
+/* Footer */
 #push {height: 30px; clear: both;}
 #footer {
     height: 1em;
-    width: 900px;
-    padding: 5px 25px 7px;
+    padding: 7px 25px 7px;
     margin: 0 auto;
-    border-top: 2px solid #ccc;
     text-align: right;
+    background-color: #000;
+    color: #fff;
 }
 p.footer {margin: 0;}
+p.footer span.copy {color: #ffd200;}
 .footerSpacer {height: 30px;}

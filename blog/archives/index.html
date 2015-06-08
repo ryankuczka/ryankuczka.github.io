@@ -1,10 +1,11 @@
 ---
-layout: blog
-blog_section: archives
+layout: base
+site_section: archives
 title: Blog Archives
 ---
-<div id="archYrList">
+<div id="contentWrap">
     {% for post in site.posts %}
+
     {% capture this_year %}{{ post.date | date:"%Y" }}{% endcapture %}
     {% capture next_year %}{{ post.previous.date | date:"%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date:"%m" }}{% endcapture %}
@@ -13,37 +14,33 @@ title: Blog Archives
     {% capture next_month_long %}{{ post.previous.date | date:"%B" }}{% endcapture %}
 
     {% if forloop.first %}
-    <a href="#" data-target="#archMnthList{{ this_year }}" class="collapsible archYr">
-        <span>{{ this_year }}</span>
-        <i class="fa fa-plus fa-2x fa-minus"></i>
-    </a>
-    <div id="archMnthList{{ this_year }}">
-        <h3 class="archMnth">{{ this_month_long }}</h3>
-        <div id="archEtrList">
+    <div class="entryTitle">{{ this_year }}</div>
+    <div class="entryContent">
+        <h3>{{ this_month_long }}</h3>
+        <p>
     {% endif %}
 
-            <div>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                <span class="pubDate">{{ post.date | date:"%b %d, %Y" }}</span>
-            </div>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="pubDate">{{ post.date | date:"%b %d, %Y" }}</span>
+            <br />
 
     {% if forloop.last %}
-        </div>
+        </p>
     </div>
     {% elsif this_year != next_year %}
-        </div>
+        </p>
     </div>
-    <a href="#" data-target="#archMnthList{{ next_year }}" class="collapsible archYr collapsed">
-        <span>{{ next_year }}</span>
-        <i class="fa fa-plus fa-2x"></i>
-    </a>
-    <div id="archMnthList{{ next_year }}">
-        <h3 class="archMnth">{{ next_month_long }}</h3>
-        <div id="archEtrList">
+    <div class="entryTitle">{{ next_year }}</div>
+    <div class="entryContent">
+        <h3>{{ next_month_long }}</h3>
+        <p>
     {% elsif this_month != next_month %}
-        </div>
-        <h3 class="archMnth">{{ next_month_long }}</h3>
-        <div id="archEtrList">
+        </p>
+        <h3>{{ next_month_long }}</h3>
+        <p>
     {% endif %}
+
     {% endfor %}
+
+    <div id="push"></div>
 </div>

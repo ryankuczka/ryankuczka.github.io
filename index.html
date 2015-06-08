@@ -1,34 +1,49 @@
 ---
 layout: base
 title: Ryan Kuczka
-stylesheets: [/static/css/blog.css, /static/css/projects.css]
 ---
-<div class="homePgWell">
-    <div class="homePgTtl">
-        <h1>Recent Blog Posts</h1>
-    </div>
-    <div class="inner">
-        {% for post in site.posts %}
-        {% unless forloop.counter > 3 %}
-        <a href="{{ post.url }}" class="entryTitle"><h2>{{ post.title }}</h2></a>
-        <h5>By: Ryan Kuczka<span class="pubDate">{{ post.date | date:"%b %d, %Y" }}</span></h5>
+<div id="contentWrap">
+    <div class="homePgTitle">Recent Blog Posts</div>
+    {% for post in site.posts %}
+    {% if forloop.index < 4 %}
+    <a href="{{ post.url }}" class="entryTitle">
+        <span class="title">{{ post.title }}</span>
+        <span class="pubDate">- {{ post.date | date:"%b %d, %Y" }}</span>
+    </a>
+    <div class="entryContent">
         {% if post.content contains '<!--more-->' %}
         {{ post.content | split:'<!--more-->' | first }}
         {% else %}
         {{ post.excerpt }}
         {% endif %}
-        {% endunless %}
-        {% endfor %}
     </div>
-</div>
+    {% endif %}
+    {% endfor %}
 
-<div class="homePgWell">
-    <div class="homePgTtl">
-        <h1>Recent Projects</h1>
+    <div class="homePgTitle">Recent Projects</div>
+    <div class="entryTitle">Django Site <span class="pubDate">Dec 23, 2013</span></div>
+    <div class="entryContent">
+        <p>
+        This site is now Jekyll powered, however, it used to be run by Django.
+        I originally built it using Django because I had several ideas of how
+        to build it where a framework like Django would be useful. I was also
+        very familiar with Django and since this is my first site built from
+        scratch, it seemed like a good idea.
+        </p>
+
+        <p>
+        After building the Django site, I learned about Jekyll and started
+        reading about it and was surprised to learn that much of what Jekyll
+        does, I had built my Django site to do similarly. Therefore, I decided
+        to switch over to Jekyll to power my site, which ended up being relatively
+        simple to do. You can now see the Django powered site (which will no longer
+        be updated) at the links below.
+        </p>
+
+        <p>
+        Github link: <a href="http://github.com/ryankuczka/django_blog" target="_blank">http://github.com/ryankuczka/django_blog</a>
+        </p>
     </div>
-    <div class="inner">
-        <a href="/projects/django_site.html" class="projName">
-            <h2>Django Site<span class="projUpdate">Last Updated: Dec 23, 2013</span></h2>
-        </a>
-    </div>
+
+    <div id="push"></div>
 </div>

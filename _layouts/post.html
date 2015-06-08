@@ -1,9 +1,16 @@
 ---
-layout: blog
-blog_section: entries
+layout: base
+site_section: blog
 ---
-<h1 class="entryTitle">{{ page.title }}</h1>
-<h5>By: Ryan Kuczka<span class="pubDate">{{ page.date | date:"%b %d, %Y" }}</span></h5>
-<div class="entryContent">
+<div id="contentWrap">
+    <div class="entryTitle">
+        <span class="title">{{ page.title }}</span>
+        <span class="pubDate">- {{ page.date | date:"%b %d, %Y" }}</span>
+    </div>
+
+    <div class="entryContent">
     {{ content }}
+    </div>
+
+    <div id="push"></div>
 </div>
