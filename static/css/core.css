@@ -3,49 +3,50 @@ html {height: 100%; overflow-y: scroll;}
 body {
     font-size: 16px;
     font-family: Arial;
-    color: #000;
+    color: #bcbcbc;
     background: #000;
     margin: 0;
     height: 100%;
 }
 h1,h2,h3,h4,h5,h6 {color: #000;}
-a {text-decoration: none; color: #ffd200;}
+a {text-decoration: none; color: #5fafd7;}
 a:hover {text-decoration: underline;}
 .clear {clear: both;}
 code {background: #ccc; color: #000;}
 p > code {border: 1px solid #777; padding: 0 5px; border-radius: 2px;}
 pre {padding: 5px; background: #ccc; color: #000; border: 1px solid #777; border-radius: 2px;}
 p {line-height: 1.2em;}
+div {box-sizing: border-box;}
 
 #wrapAll {
     max-width: 1560px;
     min-width: 1000px;
     margin: 0 auto -30px;
-    background: #777;
+    background: #444;
     box-shadow: 0 0 15px #333;
     min-height: 100%;
     height: auto !important;
     height: 100%;
 }
-#colRail {float: left; display: inline; width: 25%; box-sizing: border-box; padding: 0 0 0 20px;}
-#colMain {float: left; display: inline; width: 75%; box-sizing: border-box;}
-#contentWrap {padding: 10px 25px 0 25px; width: 1000px; margin: 0 auto; clear: both;}
+#colRail {float: left; display: inline; width: 25%; padding: 0 0 0 20px;}
+#colMain {float: left; display: inline; width: 75%;}
+#contentWrap {padding: 10px 25px 0 25px; width: 1000px; margin: 0 auto; clear: both; box-sizing: content-box;}
 
 /* Header */
 #header {
     height: 50px;
     width: 100%;
-    background-color: #000;
-    border-bottom: 1px solid #ffd200;
+    background-color: #303030;
+    border-bottom: 1px solid #5fafd7;
 }
 #header div.logo {
     margin-left: 25px;
     float: left;
-    color: #ffd200;
+    color: #5fafd7;
     font-size: 24px;
 }
 #header div.logo a {
-    color: #fff;
+    color: #bcbcbc;
     font-weight: bold;
     font-size: 44px;
     text-decoration: none;
@@ -58,44 +59,48 @@ p {line-height: 1.2em;}
     float: right;
     font-size: 24px;
     text-decoration: none;
-    color: #fff;
-    border-left: 1px solid #ffd200;
+    color: #bcbcbc;
+    border-left: 1px solid #5fafd7;;
 }
 #header a.navButton:last-child {border-left: none;}
-#header a.navButton.selected {color: #ffd200;}
-#header a.navButton:hover {color: #ffd200;}
+#header a.navButton.selected {color: #5fafd7;}
+#header a.navButton:hover {color: #5fafd7;}
 
 /* Sub-Header */
 #subHead {
-    background-color: #000;
+    background-color: #303030;
     float: right;
     width: 100%;
     height: 25px;
     padding-right: 25px;
-    border-bottom: 1px solid #ffd200;
+    border-bottom: 1px solid #5faf5f;
 }
 
 #subHead a {
     display: inline-block;
     height: 20px;
     text-decoration: none;
-    color: #fff;
+    color: #bcbcbc;
     float: right;
     padding: 5px 8px 0 8px;
 }
 #subHead a:last-child {border-left: none;}
-#subHead a:hover {color: #ffd200;}
-#subHead a.selected {color: #ffd200;}
+#subHead a:hover {color: #5faf5f;}
+#subHead a.selected {color: #5faf5f;}
 
 /* Home Page */
 div.homePgTitle {
     display: block;
     font-size: 48px;
-    background-color: #000;
-    width: 995px;
-    color: #ffd200;
+    width: 1000px;
     padding: 0 0 0 5px;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
+    background-color: #5f875f;
+    border: 1px solid #303030;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* Blog */
@@ -103,22 +108,28 @@ a.entryTitle,
 div.entryTitle {
     display: block;
     font-size: 32px;
-    background-color: #000;
-    width: 995px;
-    color: #fff;
+    background-color: #121212;
+    width: 1000px;
+    color: #bcbcbc;
     padding: 0 0 0 5px;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-a.entryTitle:hover {text-decoration: none; color: #ffd200;}
+a.entryTitle:hover {text-decoration: none; color: #5fafd7;}
 a.entryTitle span.pubDate,
-div.entryTitle span.pubDate {font-size: 16px; color: #ffd200;}
+div.entryTitle span.pubDate {font-size: 16px; color: #5fafd7;}
 
 div.entryContent {
     overflow: auto;
-    background-color: #999;
+    background-color: #eee;
+    color: #444;
     padding: 0 10px;
-    border: 1px solid #000;
+    border: 1px solid #303030;
     border-top: none;
     margin-bottom: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 div.entryContent h3 {margin: 10px 0;}
 div.entryContent span.pubDate {float: right;}
@@ -128,27 +139,13 @@ div.contactInfo:first-child {padding-top: 10px;}
 div.contactInfo a {
     display: block;
     font-size: 24px;
-    background-color: #000;
+    background-color: #303030;
     width: 309px;
-    color: #fff;
+    color: #bcbcbc;
     margin-left: 10px;
     padding: 5px;
     float: left;
     text-align: center;
 }
 div.contactInfo a:first-child {margin-left: 0;}
-div.contactInfo a:hover {text-decoration: none; color: #ffd200;}
-
-/* Footer */
-#push {height: 30px; clear: both;}
-#footer {
-    height: 1em;
-    padding: 7px 25px 7px;
-    margin: 0 auto;
-    text-align: right;
-    background-color: #000;
-    color: #fff;
-}
-p.footer {margin: 0;}
-p.footer span.copy {color: #ffd200;}
-.footerSpacer {height: 30px;}
+div.contactInfo a:hover {text-decoration: none; color: #5fafd7;}
