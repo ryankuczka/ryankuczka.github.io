@@ -5,19 +5,57 @@ title: Experience
 ---
 <div class="entryTitle">Experience</div>
 <div class="entryContent">
+    <h3>YCharts - Senior Software Engineer</h3>
+    <p>
+        After branching out more and more, I started working on many parts of YCharts
+        outside economic data. I soon became intimately familiar with our importers for
+        most of our data from many various providers.
+    </p>
+    <p>
+        I also worked on our DevOps processes. I refactored our deployment process to use
+        a build server to package up everything needed for a successful deploy instead of
+        relying on GitHub, PyPI, npm and other dependencies for every server.
+        In addition, I also migrated our AWS infrastructure from legacy EC2 servers to a
+        VPC framework.
+    </p>
+    <p>
+        One of the projects I am most proud of is our investor relations data gathering system.
+        I implemented a system to scrape companies' investor relations and news websites for
+        possible investor events, including a way for a data manager to be able to define a set
+        of rules for a given website and find events without needing to write any code. These
+        possible events are then given to a person who is able to then look at where the event was
+        found and fill in all the necessary details to create an event in our database.
+    </p>
+    <p>
+        After creating an event, another person then views a similar system and is able to verify
+        that all the details are correct, or make changes as needed, resubmitting the event for
+        verification. Once an event is verified, related documents can then be gathered and uploaded.
+        This entire process is meant to be able to be outsourced and managed without needing any
+        coding or web skills.
+    </p>
+
     <h3>YCharts - Economic Data Developer</h3>
-    <p>At YCharts, I built up and maintained a large economic indicator data set.
-    This included the web scraping system used to schedule and import new data
-    as it is released.</p>
+    <p>
+        In January 2013, I started full-time at YCharts, continuing my work on economic
+        data.
+    </p>
 
-    <p>I also worked on the infrastructure. I migrated our static assets to Amazon S3,
-    implementing a system to version each file, in order to cache bust URLs. This
-    also involved creating a system, using redis, to store the current version
-    of each filename. This allowed for an asynchronous deploy to have a worker
-    machine process and upload the static files, then when the web server is
-    updated, all that is necessary is to point them at the new versions. I plan to
-    detail this more in a future blog post.</p>
+    <p>
+        I also worked on the infrastructure. I migrated our static assets to Amazon S3,
+        implementing a system to version each file, in order to cache bust URLs. This
+        also involved creating a system, using redis, to store the current version
+        of each filename. This allowed for an asynchronous deploy to have a worker
+        machine process and upload the static files, then when the web server is
+        updated, all that is necessary is to point them at the new versions.
+    </p>
 
-    <p>I currently love my job, and I could not have chosen a better place to
-    learn and grow as a developer and look forward to many more new experiences!</p>
+    <h3>YCharts - Economic Data Intern</h3>
+    <p>
+        I started my career at YCharts as an intern, growing and maintaining a large economic
+        indicator data set. This started as mostly writing simple python scripts to load the
+        necessary data to find and import economic data from various government and private
+        websites into our system. However, as anyone who has ever scraped the web for data knows,
+        things change and I started having to work on the backend logic in order to successfully
+        import the data.
+    </p>
 </div>
